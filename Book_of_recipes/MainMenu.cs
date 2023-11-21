@@ -18,6 +18,8 @@ namespace Book_of_recipes
         {
             InitializeComponent(); 
             ShowMyImage("image4.png");
+            menuStrip1.Items.Add("add category");
+            menuStrip1.Items.Add("add recipe");
             TreeViewLoader.LoadRecipesTypes(context,treeView1); 
         }
 
@@ -46,7 +48,13 @@ namespace Book_of_recipes
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-           // ItemSelectionHandler.HandlEvent(Lable_RecipeName,);
+            ItemSelectionHandler.HandlEvent(e,
+                                            Label_RecipeName,
+                                            PreparationTimeValue,
+                                            CookTimeValue, 
+                                            DescriptionTextBox, 
+                                            context);
+
           
         }
     }
